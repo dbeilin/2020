@@ -4,9 +4,12 @@ from PyQt5 import QtWidgets
 from PyQt5.QtWidgets import QAction, QApplication, QLabel, QMainWindow, QMenu, QStyle, QSystemTrayIcon
 from PyQt5 import QtCore, QtGui
 from PyQt5.QtGui import QIcon
+import os
 
 DURATION_INT = 1200
-TIME_CYCLER = itertools.cycle([1200, 20])  
+TIME_CYCLER = itertools.cycle([1200, 20])
+dirname = os.path.dirname(__file__)
+iconFile = os.path.join(dirname, 'icon/icon.png')
 
 def secs_to_minsec(secs: int):
     mins = secs // 60
@@ -24,7 +27,7 @@ class App(QtWidgets.QMainWindow):
         self.myTimer = QtCore.QTimer(self)
 
         # Init QSystemTrayIcon
-        self.tray_icon = QSystemTrayIcon(QIcon('icon\icon.png'))
+        self.tray_icon = QSystemTrayIcon(QIcon(iconFile))
         self.tray_icon.show()
 
         #Tray menu
@@ -75,10 +78,10 @@ class App(QtWidgets.QMainWindow):
         self.time_left_int -= 1
         if self.time_left_int == 0:
             if self.current_timer == 1:
-                self.tray_icon.showMessage("TwentyTwenty", "It's time! Look away from your computer for 20 seconds", QIcon('icon\icon.png'), 7000)
+                self.tray_icon.showMessage("TwentyTwenty", "It's time! Look away from your computer for 20 seconds", QIcon(iconFile), 7000)
                 self.current_timer = 2
             elif self.current_timer == 2:
-                self.tray_icon.showMessage("TwentyTwenty", "Nice! You can now continue working", QIcon('icon\icon.png'), 7000)
+                self.tray_icon.showMessage("TwentyTwenty", "Nice! You can now continue working", QIcon(iconFile), 7000)
                 self.current_timer = 1
             self.time_left_int = next(TIME_CYCLER)
 
@@ -97,13 +100,13 @@ class App(QtWidgets.QMainWindow):
         self.tray_icon.showMessage(
             "Twenty Twenty",
             "Application was minimized to Tray",
-            QIcon('icon\icon.png'),
+            QIcon(iconFile),
             2000
         )
 
 app = QtWidgets.QApplication(sys.argv)
 app.setQuitOnLastWindowClosed(False)
 main_window = App()
-app.setWindowIcon(QIcon('icon\icon.png'))
+app.setWindowIcon(QIcon(iconFile))
 main_window.show()
 sys.exit(app.exec_())
