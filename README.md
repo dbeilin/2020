@@ -34,3 +34,7 @@ https://www.juststand.org/blog/prevent-eye-strain-with-the-20-20-20-rule/
 https://www.medicalnewstoday.com/articles/321536
 https://www.healthline.com/health/eye-health/20-20-20-rule
 ```
+
+## Thanks
+
+This project was inspired by the mac version: https://github.com/tagwohl/twenny 
