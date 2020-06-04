@@ -21,9 +21,9 @@ Simply start the app by clicking on "Start", minimize it to your tray and let it
 
 ![tray](https://i.imgur.com/Ddt11YI.png)
 
-![notification1](https://i.imgur.com/3e3yuDZ.png)
+![notification1](https://i.imgur.com/I8HuO0n.png)
 
-![notification2](https://i.imgur.com/aQy6aA3.png)
+![notification2](https://i.imgur.com/l34rYtL.png)
 
 ## More Information
 By no means should you consider this app as an alternative to a medical exam. If you feel any pain or discomfort while working on your computer, you should consult a medical professional.
