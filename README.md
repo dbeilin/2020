@@ -9,9 +9,9 @@ This app is based on the 20-20-20 rule which you can read about in the links bel
 
 ## Installation
 
-run `pip install requirements.txt`
-
-run `app.py`
+1. Extract the .zip file
+2. run `pip install requirements.txt`
+3. run `app.py`
 
 ## Usage
 
