@@ -7,7 +7,7 @@ from PyQt5.QtGui import QIcon
 import os
 
 DURATION_INT = 1200
-TIME_CYCLER = itertools.cycle([1200, 20])
+TIME_CYCLER = itertools.cycle([1200, 10])
 dirname = os.path.dirname(__file__)
 iconFile = os.path.join(dirname, 'icon/icon.png')
 
@@ -21,6 +21,7 @@ def secs_to_minsec(secs: int):
 class App(QtWidgets.QMainWindow):
     def __init__(self):
         super().__init__()
+        app.setStyle('Fusion')
 
         self.current_timer = 1
         self.time_left_int = DURATION_INT
@@ -47,25 +48,27 @@ class App(QtWidgets.QMainWindow):
 
         # App window
         self.setGeometry(300, 300, 300, 180)
+        self.setStyleSheet("background-color: #2B607A;")
         self.setWindowTitle("TwentyTwenty")
 
         # Widgets
         self.timerLabel = QtWidgets.QLabel(self)
         self.timerLabel.move(100,30)
         self.timerLabel.setAlignment(QtCore.Qt.AlignCenter)
-        self.timerLabel.setStyleSheet("font: 24pt")
+        self.timerLabel.setStyleSheet("font: 24pt ; color: white")
 
         self.startButton = QtWidgets.QPushButton(self)
         self.startButton.setText("Start")
         self.startButton.move(100,100)
         self.startButton.clicked.connect(self.startTimer)
-        self.startButton.setStyleSheet("font: 14pt")
+        self.startButton.setStyleSheet("font: 20pt")
+        self.startButton.setStyleSheet("font: 12pt ; background-color: #055076 ; color:white")
 
         self.minimizeButton = QtWidgets.QPushButton(self)
         self.minimizeButton.setText("Minimize")
         self.minimizeButton.move(100,130)
         self.minimizeButton.clicked.connect(self.minimize)
-        self.minimizeButton.setStyleSheet("font: 14pt")
+        self.minimizeButton.setStyleSheet("font: 12pt ; background-color: #055076 ; color:white")
 
         self.update_gui()
 
@@ -78,7 +81,7 @@ class App(QtWidgets.QMainWindow):
         self.time_left_int -= 1
         if self.time_left_int == 0:
             if self.current_timer == 1:
-                self.tray_icon.showMessage("TwentyTwenty", "It's time! Look away from your computer for 20 seconds", QIcon(iconFile), 7000)
+                self.tray_icon.showMessage("TwentyTwenty", "It's time! Look away from your monitor for 20 seconds", QIcon(iconFile), 7000)
                 self.current_timer = 2
             elif self.current_timer == 2:
                 self.tray_icon.showMessage("TwentyTwenty", "Nice! You can now continue working", QIcon(iconFile), 7000)
