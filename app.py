@@ -50,18 +50,18 @@ class App(QtWidgets.QMainWindow):
         self.setWindowTitle("TwentyTwenty")
 
         # Widgets
-        self.timerLabel = QtWidgets.QLabel(self) #.win)
+        self.timerLabel = QtWidgets.QLabel(self)
         self.timerLabel.move(100,30)
         self.timerLabel.setAlignment(QtCore.Qt.AlignCenter)
         self.timerLabel.setStyleSheet("font: 24pt")
 
-        self.startButton = QtWidgets.QPushButton(self) #.win)
+        self.startButton = QtWidgets.QPushButton(self)
         self.startButton.setText("Start")
         self.startButton.move(100,100)
         self.startButton.clicked.connect(self.startTimer)
         self.startButton.setStyleSheet("font: 14pt")
 
-        self.minimizeButton = QtWidgets.QPushButton(self) #.win)
+        self.minimizeButton = QtWidgets.QPushButton(self)
         self.minimizeButton.setText("Minimize")
         self.minimizeButton.move(100,130)
         self.minimizeButton.clicked.connect(self.minimize)
