@@ -7,7 +7,7 @@ from PyQt5.QtGui import QIcon
 import os
 
 DURATION_INT = 1200
-TIME_CYCLER = itertools.cycle([1200, 10])
+TIME_CYCLER = itertools.cycle([1200, 20])
 
 def secs_to_minsec(secs: int):
     mins = secs // 60
