@@ -8,8 +8,6 @@ import os
 
 DURATION_INT = 1200
 TIME_CYCLER = itertools.cycle([1200, 10])
-# dirname = os.path.dirname(__file__)
-# iconFile = os.path.join(dirname, 'icon.ico')
 
 def secs_to_minsec(secs: int):
     mins = secs // 60
