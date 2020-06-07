@@ -9,14 +9,13 @@ import os
 DURATION_INT = 1200
 TIME_CYCLER = itertools.cycle([1200, 10])
 dirname = os.path.dirname(__file__)
-iconFile = os.path.join(dirname, 'icon/icon.png')
+iconFile = os.path.join(dirname, 'icon/icon.ico')
 
 def secs_to_minsec(secs: int):
     mins = secs // 60
     secs = secs % 60
     minsec = f'{mins:02}:{secs:02}'
     return minsec
-
 
 class App(QtWidgets.QMainWindow):
     def __init__(self):
