@@ -40,4 +40,5 @@ If you're getting an error while running `pip install requirements`, simply run 
 
 ## Thanks
 
-This project was inspired by the mac version: https://github.com/tagwohl/twenny 
+This project was inspired by the mac version: https://github.com/tagwohl/twenny
+Icon made by freepik from https://www.flaticon.com/authors/freepik
