@@ -15,7 +15,7 @@ This app is based on the 20-20-20 rule which you can read about in the links bel
 
 ## Usage
 
-![main](https://i.imgur.com/mvklW6L.png)
+![main](https://i.imgur.com/cuIxJOa.png)
 
 Simply start the app by clicking on "Start", minimize it to your tray and let it run in the background. A notification will pop up every 20 minutes to remind you to look away for the next 20 seconds. Each notification will also play a sound so you'll know when you can look again at the monitor. You also have a tray menu at your disposal:
 
