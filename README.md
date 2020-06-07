@@ -35,6 +35,9 @@ https://www.medicalnewstoday.com/articles/321536
 https://www.healthline.com/health/eye-health/20-20-20-rule
 ```
 
+## Troubleshooting
+If you're getting an error while running `pip install requirements`, simply run `pip install PyQt5`, that should be enough to run the app in your environment.
+
 ## Thanks
 
 This project was inspired by the mac version: https://github.com/tagwohl/twenny 
