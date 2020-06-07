@@ -34,6 +34,8 @@ https://www.juststand.org/blog/prevent-eye-strain-with-the-20-20-20-rule/
 https://www.medicalnewstoday.com/articles/321536
 https://www.healthline.com/health/eye-health/20-20-20-rule
 ```
+There's also a portable and an installable version of this app here:
+https://beilins.wordpress.com/2020/06/07/twentytwenty-my-firs-pyqt-gui-app/
 
 ## Troubleshooting
 If you're getting an error while running `pip install requirements`, simply run `pip install PyQt5`, that should be enough to run the app in your environment.
