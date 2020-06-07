@@ -8,14 +8,19 @@ import os
 
 DURATION_INT = 1200
 TIME_CYCLER = itertools.cycle([1200, 10])
-dirname = os.path.dirname(__file__)
-iconFile = os.path.join(dirname, 'icon/icon.ico')
+# dirname = os.path.dirname(__file__)
+# iconFile = os.path.join(dirname, 'icon.ico')
 
 def secs_to_minsec(secs: int):
     mins = secs // 60
     secs = secs % 60
     minsec = f'{mins:02}:{secs:02}'
     return minsec
+
+def resource_path(relative_path):
+    """ Get absolute path to resource, works for dev and for PyInstaller """
+    base_path = getattr(sys, '_MEIPASS', os.path.dirname(os.path.abspath(__file__)))
+    return os.path.join(base_path, relative_path)
 
 class App(QtWidgets.QMainWindow):
     def __init__(self):
@@ -47,8 +52,6 @@ class App(QtWidgets.QMainWindow):
 
         # App window
         self.setGeometry(300, 300, 300, 180)
-        self.setMinimumSize(300, 180) 
-        self.setMaximumSize(300, 180)
         self.setStyleSheet("background-color: #2B607A;")
         self.setWindowTitle("TwentyTwenty")
 
@@ -108,6 +111,11 @@ class App(QtWidgets.QMainWindow):
             2000
         )
 
+iconFile = resource_path('icon.ico')
+if hasattr(QtCore.Qt, 'AA_EnableHighDpiScaling'):
+    QtWidgets.QApplication.setAttribute(QtCore.Qt.AA_EnableHighDpiScaling, True)
+if hasattr(QtCore.Qt, 'AA_UseHighDpiPixmaps'):
+    QtWidgets.QApplication.setAttribute(QtCore.Qt.AA_UseHighDpiPixmaps, True)
 app = QtWidgets.QApplication(sys.argv)
 app.setQuitOnLastWindowClosed(False)
 main_window = App()
