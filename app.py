@@ -47,6 +47,8 @@ class App(QtWidgets.QMainWindow):
 
         # App window
         self.setGeometry(300, 300, 300, 180)
+        self.setMinimumSize(300, 180) 
+        self.setMaximumSize(300, 180)
         self.setStyleSheet("background-color: #2B607A;")
         self.setWindowTitle("TwentyTwenty")
 
